@@ -1,7 +1,8 @@
 import java.rmi.*;
+import java.io.*;
 
 	 public interface FileServerIntf extends Remote 
 	 {	 	
-		String listfiles(String inp) throws RemoteException;
+		File[] listfiles(String inp) throws RemoteException;
 	 }
 

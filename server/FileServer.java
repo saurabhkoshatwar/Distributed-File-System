@@ -4,7 +4,7 @@ public class FileServer {
 	public static void main(String args[]) {
 		try {
 		FileServerImpl fileServerImpl = new FileServerImpl();
-		System.setProperty("java.rmi.server.hostname","10.11.3.19"); 
+		System.setProperty("java.rmi.server.hostname","10.11.3.7"); 
 		Naming.rebind("FileServer", fileServerImpl); 
 		} 
 		

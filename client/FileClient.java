@@ -1,12 +1,23 @@
+import java.io.File;
 import java.rmi.*;
 import java.util.*;
 
 public class FileClient {
 
-  public static void main(String args[])
+  public static void main(String args[]) throws Exception
   {
+
+					String fileServerURL = "rmi://127.0.0.1/FileServer";
+					FileServerIntf fileServerIntf = (FileServerIntf)Naming.lookup(fileServerURL);
+					File[] f = fileServerIntf.listfiles("ss");
+
+					for(int i =0;i<f.length;i++)
+					{
+
+						System.out.println("ss:"+f[i].getName());
+					}	
                 
-                Scanner sc = new Scanner(System.in);
+                /*Scanner sc = new Scanner(System.in);
                 
                 System.out.print(">>>>");
                 String inp = sc.next();
@@ -55,13 +66,13 @@ public class FileClient {
 				else if(inp.contains("Videos"))
 				{
 					
-					location = "10.11.3.18";
+					location = "127.0.0.1";
 				}
                  	}
                  	
                  	System.out.print(">>>>");
                  	inp = sc.nextLine();	
-         	}
+				}*/
          	
          	/*
                 Scanner sc = new Scanner(System.in);
